@@ -28,10 +28,7 @@ export default function Profile() {
         sort: { createdAt: "desc" },
         populate: {
           cover: { fields: ["url"] },
-          category: { populate: "*" },
-          authorsBio: {
-            populate: "*",
-          },
+          category: { populate: "*" }
         },
         pagination: {
           start: start,

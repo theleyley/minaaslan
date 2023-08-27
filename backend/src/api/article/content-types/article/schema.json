@@ -4,7 +4,7 @@
   "info": {
     "singularName": "article",
     "pluralName": "articles",
-    "displayName": "Article",
+    "displayName": "Work",
     "description": "Create your blog content"
   },
   "options": {
@@ -49,12 +49,6 @@
         "shared.slider",
         "shared.video-embed"
       ]
-    },
-    "authorsBio": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::author.author",
-      "inversedBy": "articles"
     },
     "seo": {
       "type": "component",
