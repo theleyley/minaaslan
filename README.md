@@ -1,4 +1,4 @@
-# Blog using Next.js and Strapi
+# Mina Aslan Portoflio Site
 
 > **NOTE:**
 >
