@@ -23,7 +23,8 @@
       "enum": [
         "YOUTUBE",
         "TWITTER",
-        "DISCORD",
+        "INSTAGRAM",
+        "LINKEDIN",
         "WEBSITE"
       ]
     }

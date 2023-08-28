@@ -3,8 +3,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Logo from "./Logo";
 import { CgWebsite } from "react-icons/cg";
-import { FaDiscord } from "react-icons/fa";
-import { AiFillTwitterCircle, AiFillYoutube } from "react-icons/ai";
+import { AiFillTwitterCircle, AiFillYoutube, AiFillLinkedin, AiFillInstagram } from "react-icons/ai";
 
 interface FooterLink {
   id: number;
@@ -59,8 +58,10 @@ function RenderSocialIcon({ social }: { social: string | undefined }) {
       return <AiFillTwitterCircle />;
     case "YOUTUBE":
       return <AiFillYoutube />;
-    case "DISCORD":
-      return <FaDiscord />;
+    case "LINKEDIN":
+      return <AiFillLinkedin />;
+    case "INSTAGRAM":
+      return <AiFillInstagram />;
     default:
       return null;
   }
@@ -69,15 +70,11 @@ function RenderSocialIcon({ social }: { social: string | undefined }) {
 export default function Footer({
   logoUrl,
   logoText,
-  menuLinks,
-  categoryLinks,
   legalLinks,
   socialLinks,
 }: {
   logoUrl: string | null;
-  logoText: string | null;
-  menuLinks: Array<FooterLink>;
-  categoryLinks: Array<CategoryLink>;
+  logoText: string;
   legalLinks: Array<FooterLink>;
   socialLinks: Array<FooterLink>;
 }) {
@@ -87,30 +84,8 @@ export default function Footer({
       <div className="container px-6 mx-auto space-y-6 divide-y divide-gray-400 md:space-y-12 divide-opacity-50">
         <div className="grid grid-cols-12">
           <div className="pb-6 col-span-full md:pb-0 md:col-span-6">
-            <Logo src={logoUrl}>
-              {logoText && <h2 className="text-2xl font-bold">{logoText}</h2>}
-            </Logo>
-          </div>
+            <Logo src={logoUrl} altText={logoText}/>
 
-          <div className="col-span-6 text-center md:text-left md:col-span-3">
-            <p className="pb-1 text-lg font-medium">Categories</p>
-            <ul>
-              {categoryLinks.map((link: CategoryLink) => (
-                <CategoryLink key={link.id} {...link} />
-              ))}
-            </ul>
-          </div>
-
-          <div className="col-span-6 text-center md:text-left md:col-span-3">
-            <p className="pb-1 text-lg font-medium">Menu</p>
-            <ul>
-              {menuLinks.map((link: FooterLink) => (
-                <FooterLink key={link.id} {...link} />
-              ))}
-            </ul>
-          </div>
-        </div>
-        <div className="grid justify-center pt-6 lg:justify-between">
           <div className="flex">
             <span className="mr-2">
               ©{new Date().getFullYear()} All rights reserved
@@ -127,6 +102,7 @@ export default function Footer({
               ))}
             </ul>
           </div>
+          </div>
           <div className="flex justify-center pt-4 space-x-4 lg:pt-0 lg:col-end-13">
             {socialLinks.map((link: FooterLink) => {
               return (
@@ -136,7 +112,7 @@ export default function Footer({
                   href={link.url}
                   title={link.text}
                   target={link.newTab ? "_blank" : "_self"}
-                  className="flex items-center justify-center w-10 h-10 rounded-full dark:bg-violet-400 dark:text-gray-900"
+                  className="flex items-center justify-center w-10 h-10 dark:text-gray-100"
                 >
                   <RenderSocialIcon social={link.social} />
                 </a>
