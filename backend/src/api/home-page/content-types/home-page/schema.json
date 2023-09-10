@@ -55,6 +55,13 @@
     "rightBlurb": {
       "type": "richtext",
       "required": true
+    },
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
     }
   }
 }

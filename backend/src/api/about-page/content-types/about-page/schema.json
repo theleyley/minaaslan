@@ -29,6 +29,13 @@
       "type": "component",
       "repeatable": false,
       "component": "highlights-cluster.highlights-cluster"
+    },
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
     }
   }
 }
