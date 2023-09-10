@@ -13,7 +13,7 @@ This project is a code repo for minaaslan.com.
 1. Clone the repo locally:
 
 ```bash
-git clone https://github.com/Marktawa/blog-strapi
+git clone https://github.com/theleyley/minaaslan.git
 ```
 
 2. Set up backend dependencies:
