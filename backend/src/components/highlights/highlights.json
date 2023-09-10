@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_highlights_highlights",
+  "info": {
+    "displayName": "Highlights",
+    "icon": "grid"
+  },
+  "options": {},
+  "attributes": {
+    "highlight": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

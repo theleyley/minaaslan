@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "ethos_pages",
+  "info": {
+    "singularName": "ethos-page",
+    "pluralName": "ethos-pages",
+    "displayName": "Ethos",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "header": {
+      "type": "string"
+    },
+    "highlights": {
+      "type": "component",
+      "repeatable": true,
+      "component": "highlights.highlights"
+    },
+    "ethosGroup": {
+      "type": "component",
+      "repeatable": true,
+      "component": "highlights-cluster.highlights-cluster"
+    }
+  }
+}

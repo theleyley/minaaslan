@@ -1,0 +1,60 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_pages",
+  "info": {
+    "singularName": "home-page",
+    "pluralName": "home-pages",
+    "displayName": "Home",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "word": {
+      "displayName": "Rotating Power Words",
+      "type": "component",
+      "repeatable": true,
+      "component": "power-words.rotating-power-words",
+      "required": true
+    },
+    "powerWordEnd": {
+      "type": "string",
+      "required": true
+    },
+    "blurb": {
+      "type": "richtext"
+    },
+    "workSectionImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "work_entries": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::work-entry.work-entry"
+    },
+    "leftBlurb": {
+      "type": "richtext",
+      "required": true
+    },
+    "rightBlurb": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}

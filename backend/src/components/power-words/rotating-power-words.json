@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_power_words_rotating_power_words",
+  "info": {
+    "displayName": "Rotating Power Words",
+    "icon": "rotate",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Word": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

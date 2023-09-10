@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_highlights_cluster_highlights_clusters",
+  "info": {
+    "displayName": "Highlights Cluster",
+    "icon": "dashboard"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "highlights": {
+      "displayName": "Highlights",
+      "type": "component",
+      "repeatable": true,
+      "component": "highlights.highlights",
+      "required": false
+    },
+    "groupWidth": {
+      "type": "enumeration",
+      "enum": [
+        "half",
+        "full"
+      ],
+      "required": false,
+      "default": "half"
+    }
+  }
+}

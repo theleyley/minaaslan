@@ -10,6 +10,8 @@ This project is a code repo for minaaslan.com.
 
 ## Getting Started
 
+Dependencies: Node v16, yarn
+
 1. Clone the repo locally:
 
 ```bash

@@ -1,0 +1,43 @@
+{
+  "collectionName": "components_work_detail_row_work_detail_rows",
+  "info": {
+    "displayName": "Work Detail Row",
+    "icon": "briefcase"
+  },
+  "options": {},
+  "attributes": {
+    "mediaType": {
+      "type": "enumeration",
+      "enum": [
+        "Image",
+        "YouTube Video",
+        "PDF"
+      ],
+      "default": "Image",
+      "required": true
+    },
+    "blurb": {
+      "type": "richtext",
+      "required": true
+    },
+    "primaryImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "youtubeUrl": {
+      "type": "string",
+      "regex": "^((?:https?:)?\\/\\/)?((?:www|m)\\.)?((?:youtube(-nocookie)?\\.com|youtu.be))(\\/(?:[\\w\\-]+\\?v=|embed\\/|live\\/|v\\/)?)([\\w\\-]+)(\\S+)?$"
+    },
+    "pdf": {
+      "allowedTypes": [
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

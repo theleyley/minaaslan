@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "work_entries",
+  "info": {
+    "singularName": "work-entry",
+    "pluralName": "work-entries",
+    "displayName": "Work Entry",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "titleTop": {
+      "type": "string",
+      "required": true
+    },
+    "titleBottom": {
+      "type": "string"
+    },
+    "blurb": {
+      "type": "text"
+    },
+    "subhead": {
+      "type": "text"
+    },
+    "workRow": {
+      "displayName": "Work Detail Row",
+      "type": "component",
+      "repeatable": true,
+      "component": "work-detail-row.work-detail-row"
+    },
+    "urlSlug": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    }
+  }
+}
