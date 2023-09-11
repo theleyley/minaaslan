@@ -4,6 +4,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {PortfolioModule} from './portfolio/portfolio.module';
 import {CommonModule} from "@angular/common";
+import {AboutModule} from "./about/about.module";
+import {HomeModule} from "./home/home.module";
 
 @NgModule({
   declarations: [
@@ -13,7 +15,9 @@ import {CommonModule} from "@angular/common";
     CommonModule,
     BrowserModule,
     AppRoutingModule,
-    PortfolioModule
+    PortfolioModule,
+    AboutModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
