@@ -8,6 +8,7 @@ import {AboutModule} from "./about/about.module";
 import {HomeModule} from "./home/home.module";
 import {EthosModule} from "./ethos/ethos.module";
 import {ContactModule} from "./contact/contact.module";
+import { GlobalModule } from './global/global.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {ContactModule} from "./contact/contact.module";
     AboutModule,
     HomeModule,
     EthosModule,
-    ContactModule
+    ContactModule,
+    GlobalModule
   ],
   providers: [],
   bootstrap: [AppComponent]
