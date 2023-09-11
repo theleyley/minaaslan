@@ -6,6 +6,8 @@ import {PortfolioModule} from './portfolio/portfolio.module';
 import {CommonModule} from "@angular/common";
 import {AboutModule} from "./about/about.module";
 import {HomeModule} from "./home/home.module";
+import {EthosModule} from "./ethos/ethos.module";
+import {ContactModule} from "./contact/contact.module";
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import {HomeModule} from "./home/home.module";
     AppRoutingModule,
     PortfolioModule,
     AboutModule,
-    HomeModule
+    HomeModule,
+    EthosModule,
+    ContactModule
   ],
   providers: [],
   bootstrap: [AppComponent]
