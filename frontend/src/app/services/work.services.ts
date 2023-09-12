@@ -24,4 +24,14 @@ export class WorkService {
                 return err;
             }));
     }
+
+    getPageData(): Observable<any> {
+        const url = `${this.baseUrl}/api/home-page?populate=*`;
+        return this.http.get<any>(url, {withCredentials: true})
+            .pipe(map((response) => {
+                return response.data;
+            }, (err: any) => {
+                return err;
+            }));
+    }
 }

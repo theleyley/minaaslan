@@ -11,13 +11,18 @@ import {environment} from "../../environments/environment";
 export class HomeComponent implements OnInit {
   works: WorkModel[] = [];
   env = environment;
+  pageData: any;
   constructor(private workService: WorkService) { }
 
   ngOnInit(): void {
     this.workService.getWork().subscribe((workItems) => {
       if (workItems) {
         this.works = workItems;
-        console.log(this.works);
+      }
+    })
+    this.workService.getPageData().subscribe((data) => {
+      if (data) {
+        this.pageData = data;
       }
     })
   }
