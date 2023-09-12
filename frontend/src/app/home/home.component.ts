@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
     })
     this.workService.getPageData().subscribe((data) => {
       if (data) {
-        this.pageData = data;
+        this.pageData = data.attributes;
       }
     })
   }
