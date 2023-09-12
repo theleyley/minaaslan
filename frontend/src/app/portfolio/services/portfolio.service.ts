@@ -12,7 +12,7 @@ export class PortfolioService {
     public baseUrl: string;
 
     constructor(private http: HttpClient) {
-        this.baseUrl = `${environment.local}`;
+        this.baseUrl = `${environment.apiBase}`;
     }
 
     getPortfolioItems(): Observable<PortfolioModel[]> {

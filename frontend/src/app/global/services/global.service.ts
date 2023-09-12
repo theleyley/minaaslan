@@ -12,7 +12,7 @@ export class GlobalService {
     public baseUrl: string;
 
     constructor(private http: HttpClient) {
-        this.baseUrl = `${environment.local}`;
+        this.baseUrl = `${environment.apiBase}`;
     }
 
     getGlobalItems(): Observable<GlobalModel> {
