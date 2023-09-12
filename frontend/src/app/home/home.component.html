@@ -4,7 +4,7 @@
         <h3>{{ work.attributes?.titleBottom }}</h3>
         <p>{{ work.attributes?.subhead }}</p>
         <p>{{ work.attributes?.blurb }}</p>
-        <div class="work-row" *ngFor="let workrow of work.attributes.workRow">
+        <div class="work-row" *ngFor="let workrow of work.attributes.workRow; let index = index" [ngClass]="{'flip': 0 === index % 2, 'flop': 0 !== index % 2}">
             <h4>{{ workrow.blurb }}</h4>
             <img src="{{ buildPath(workrow.primaryImage?.data?.attributes?.url) }}"
                  alt="{{ workrow.primaryImage.data.attributes.alternativeText }}"
