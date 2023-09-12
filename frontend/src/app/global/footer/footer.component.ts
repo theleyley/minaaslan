@@ -21,4 +21,8 @@ export class FooterComponent implements OnInit {
   route(route: string) {
     this.router.navigateByUrl(route);
   }
+
+  buildClass(platform: string) {
+    return `bi bi-${platform.toLowerCase()}`
+  }
 }
