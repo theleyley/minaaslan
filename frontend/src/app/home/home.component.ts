@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {WorkService} from "../services/work.services";
 import {WorkAttribute, WorkModel} from "../models/work.model";
 import {environment} from "../../environments/environment";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,7 @@ export class HomeComponent implements OnInit {
   works: WorkModel[] = [];
   env = environment;
   pageData: any;
-  constructor(private workService: WorkService) { }
+  constructor(private workService: WorkService, private router: Router) { }
 
   ngOnInit(): void {
     this.workService.getWork().subscribe((workItems) => {
@@ -32,7 +33,8 @@ export class HomeComponent implements OnInit {
   }
 
   viewWork(metadata: WorkAttribute) {
-    console.log(metadata);
+    const route = metadata.slug;
+    this.router.navigateByUrl(`/work/${route}`);
   }
 
 }

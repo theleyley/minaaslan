@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {PortfolioModule} from './portfolio/portfolio.module';
+import {WorkModule} from './work/work.module';
 import {CommonModule} from "@angular/common";
 import {AboutModule} from "./about/about.module";
 import {HomeModule} from "./home/home.module";
@@ -19,7 +19,7 @@ import {WorkService} from './services/work.services';
     CommonModule,
     BrowserModule,
     AppRoutingModule,
-    PortfolioModule,
+    WorkModule,
     AboutModule,
     HomeModule,
     EthosModule,

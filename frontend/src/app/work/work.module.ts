@@ -1,24 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PortfolioComponent } from './portfolio.component';
-import {PortfolioService} from "./services/portfolio.service";
+import { WorkComponent } from './work.component';
 import {HttpClientModule} from '@angular/common/http';
+import { WorkItemComponent } from './work-item/work-item.component';
 
 
 
 @NgModule({
   declarations: [
-    PortfolioComponent
+    WorkComponent,
+    WorkItemComponent
   ],
   imports: [
     CommonModule,
     HttpClientModule
   ],
   providers: [
-      PortfolioService
   ],
   exports: [
-      PortfolioComponent
+      WorkComponent,
+      WorkItemComponent
   ]
 })
-export class PortfolioModule { }
+export class WorkModule { }

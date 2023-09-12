@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {AboutComponent} from './about/about.component';
-import {PortfolioComponent} from "./portfolio/portfolio.component";
+import {WorkComponent} from "./work/work.component";
 import {HomeComponent} from "./home/home.component";
 import {EthosComponent} from "./ethos/ethos.component";
 import {ContactComponent} from "./contact/contact.component";
+import {WorkItemComponent} from "./work/work-item/work-item.component";
 
 const routes: Routes = [
   {
@@ -17,9 +18,8 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'portfolio',
-    component: PortfolioComponent,
-    pathMatch: 'full'
+    path: 'work/:id',
+    component: WorkComponent,
   },
   {
     path: 'ethos',

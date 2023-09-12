@@ -34,4 +34,14 @@ export class WorkService {
                 return err;
             }));
     }
+
+    getWorkItem(id: any): Observable<WorkModel[]> {
+        const url = `${this.baseUrl}/api/work-entries?filters[slug][$eq]=${id}&populate=*`;
+        return this.http.get<any>(url, {withCredentials: true})
+            .pipe(map((response) => {
+                return response.data;
+            }, (err: any) => {
+                return err;
+            }));
+    }
 }

@@ -1,4 +1,4 @@
-export interface PortfolioModel {
+export interface WorkModel {
     id: string;
     attributes?: Attribute;
     image?: any;
