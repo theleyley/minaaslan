@@ -36,11 +36,6 @@
       "repeatable": true,
       "component": "work-detail-row.work-detail-row"
     },
-    "urlSlug": {
-      "type": "string",
-      "required": true,
-      "unique": true
-    },
     "slug": {
       "type": "uid",
       "targetField": "title",
