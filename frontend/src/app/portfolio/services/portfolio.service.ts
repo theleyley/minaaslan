@@ -16,7 +16,7 @@ export class PortfolioService {
     }
 
     getPortfolioItems(): Observable<PortfolioModel[]> {
-        const url = `${this.baseUrl}/portfolios`;
+        const url = `${this.baseUrl}/portfolios?populate=*`;
         return this.http.get<any>(url, {withCredentials: true})
             .pipe(map((response) => {
                 return response.data;

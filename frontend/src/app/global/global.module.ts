@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { GlobalService } from './services/global.service';
 
 
 
@@ -15,6 +16,9 @@ import { BrowserModule } from '@angular/platform-browser';
   imports: [
     CommonModule,
     BrowserModule
+  ],
+  providers: [
+    GlobalService
   ],
   exports: [
     HeaderComponent,

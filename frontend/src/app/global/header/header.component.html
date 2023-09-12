@@ -1,9 +1,30 @@
-<div class="nav">
-    <ul>
-        <li><a routerLink="/" (click)="route('')">Home</a></li>
-        <li><a routerLink="ethos" (click)="route('ethos')">Ethos</a></li>
-        <li><a routerLink="portfolio" (click)="route('portfolio')">Portfolio</a></li>
-        <li><a routerLink="about" (click)="route('about')">About</a></li>
-        <li><a routerLink="contact" (click)="route('contact')">Contact</a></li>
-    </ul>
-</div>
+<header>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <div class="d-flex"></div>
+            <a class="navbar-brand brand d-lg-none" routerLink="/" (click)="route('')">Mina Aslan</a>
+            <button class="navbar-toggler flex-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+          <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0 mt-4 mt-lg-0 align-items-lg-center">
+              <li class="nav-item">
+                <a class="nav-link text-end text-lg-center active" aria-current="page" routerLink="/" (click)="route('')">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-end text-lg-center" routerLink="about" (click)="route('about')">About</a>
+              </li>
+              <li class="nav-item d-none d-lg-block d-xs-block" *ngIf="globalItems?.attributes?.siteName">
+                <a class="nav-link brand" routerLink="/" (click)="route('')">{{ globalItems?.attributes?.siteName }}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-end text-lg-center" routerLink="ethos" (click)="route('ethos')">Ethos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-end text-lg-center" routerLink="contact" (click)="route('contact')">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+</header>
