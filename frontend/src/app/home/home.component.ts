@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {WorkService} from "../services/work.services";
-import {WorkModel} from "../models/work.model";
+import {WorkAttribute, WorkModel} from "../models/work.model";
 import {environment} from "../../environments/environment";
 
 @Component({
@@ -24,6 +24,10 @@ export class HomeComponent implements OnInit {
 
   buildPath(path: any) {
     return `${this.env.apiBase}${path}`;
+  }
+
+  viewWork(metadata: WorkAttribute) {
+    console.log(metadata);
   }
 
 }
