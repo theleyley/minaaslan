@@ -4,8 +4,10 @@
         <div class="col-12 col-md-6 mb-5" *ngFor="let work of works">
             <div class="work__card h-100 clickable"  (click)="viewWork(work.attributes)">
                 <div class="work__card-body">
-                    <h3 class="work__card-title"><span class="d-block work__card--top">{{ work.attributes?.titleTop }}</span>
-                        <span class="d-block work__card--bottom">{{ work.attributes?.titleBottom }}</span></h3>
+                    <h3 class="work__card-title">
+                        <div class="work__card--top"><span>{{ work.attributes?.titleTop }}</span></div>
+                        <div class="work__card--bottom"><span>{{ work.attributes?.titleBottom }}</span></div>
+                    </h3>
                 </div>
                 <!-- <p>{{ work.attributes?.subhead }}</p>
                 <p>{{ work.attributes?.blurb }}</p>
