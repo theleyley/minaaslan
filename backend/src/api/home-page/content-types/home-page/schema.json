@@ -43,11 +43,6 @@
         "images"
       ]
     },
-    "work_entries": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::work-entry.work-entry"
-    },
     "leftBlurb": {
       "type": "richtext",
       "required": true
