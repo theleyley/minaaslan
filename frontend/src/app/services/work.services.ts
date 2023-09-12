@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
 import {delay, map} from 'rxjs/operators';
-import {environment} from '../../../environments/environment';
-import {PortfolioModel} from '../models/porfolio.model';
+import {environment} from '../../environments/environment';
 import {HttpClient} from '@angular/common/http';
+import {WorkModel} from "../models/work.model";
 
 
 @Injectable()
-export class PortfolioService {
+export class WorkService {
 
     public baseUrl: string;
 
@@ -15,8 +15,8 @@ export class PortfolioService {
         this.baseUrl = `${environment.apiBase}`;
     }
 
-    getPortfolioItems(): Observable<PortfolioModel[]> {
-        const url = `${this.baseUrl}/api/portfolios?populate=*`;
+    getWork(): Observable<WorkModel[]> {
+        const url = `${this.baseUrl}/api/work-entries?populate[workRow][populate]=*`;
         return this.http.get<any>(url, {withCredentials: true})
             .pipe(map((response) => {
                 return response.data;

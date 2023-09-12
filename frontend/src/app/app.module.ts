@@ -9,6 +9,7 @@ import {HomeModule} from "./home/home.module";
 import {EthosModule} from "./ethos/ethos.module";
 import {ContactModule} from "./contact/contact.module";
 import { GlobalModule } from './global/global.module';
+import {WorkService} from './services/work.services';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { GlobalModule } from './global/global.module';
     ContactModule,
     GlobalModule
   ],
-  providers: [],
+  providers: [WorkService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

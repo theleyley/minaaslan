@@ -16,10 +16,9 @@ export class GlobalService {
     }
 
     getGlobalItems(): Observable<GlobalModel> {
-        const url = `${this.baseUrl}/global?populate=links`;
+        const url = `${this.baseUrl}/api/global?populate=links`;
         return this.http.get<any>(url, {withCredentials: true})
             .pipe(map((response) => {
-                console.log(response.data);
                 return response.data;
             }, (err: any) => {
                 return err;
