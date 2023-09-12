@@ -27,7 +27,7 @@
     "group": {
       "displayName": "Highlights Cluster",
       "type": "component",
-      "repeatable": false,
+      "repeatable": true,
       "component": "highlights-cluster.highlights-cluster"
     },
     "title": {
