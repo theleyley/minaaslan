@@ -8,14 +8,14 @@ import {WorkService} from '../services/work.services';
   styleUrls: ['./work.component.scss']
 })
 export class WorkComponent implements OnInit {
-  work: any;
+  workData: any;
   constructor(private route: ActivatedRoute, private workService: WorkService) { }
 
   ngOnInit(): void {
     const workId = this.route.snapshot.paramMap.get('id');
     this.workService.getWorkItem(workId).subscribe((data) => {
       if(data && data.length) {
-        this.work = data[0].attributes;
+        this.workData = data[0].attributes;
       }
     })
   }
