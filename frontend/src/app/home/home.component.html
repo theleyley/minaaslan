@@ -1,5 +1,5 @@
 <div class="works-container" *ngIf="works">
-    <div *ngFor="let work of works">
+    <div *ngFor="let work of works" (click)="viewWork(work.attributes)">
         <h1>{{ work.attributes?.titleTop }}</h1>
         <h3>{{ work.attributes?.titleBottom }}</h3>
         <p>{{ work.attributes?.subhead }}</p>
