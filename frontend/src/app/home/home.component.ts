@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {WorkService} from "../services/work.services";
-import {WorkAttribute, WorkModel} from "../models/work.model";
 import {environment} from "../../environments/environment";
 import {Router} from '@angular/router';
 import {BehaviorSubject, interval, take} from "rxjs";
