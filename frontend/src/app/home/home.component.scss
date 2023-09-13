@@ -1,0 +1,76 @@
+// Custom.scss
+// Option B: Include parts of Bootstrap
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "./../../../node_modules/bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "./../../../node_modules/bootstrap/scss/variables";
+@import "./../../../node_modules/bootstrap/scss/mixins";
+
+// 5. Add additional custom code here
+
+.hero {
+    &__image {
+        height: 75vh;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+.power-words {
+    &__word-end {
+        font-family: 'Libre Bodoni', serif;
+        font-size: 5rem;
+        @include media-breakpoint-up(lg) {
+            font-size: 6rem;
+        }
+        @include media-breakpoint-up(xl) {
+            font-size: 7rem;
+        }
+    }
+}
+.testimonials {
+    min-height: 25vw;
+
+    &__blurb {
+        width: calc(50vw - 13vw);
+    }
+    &__bg {
+        @include media-breakpoint-up(lg) {
+            width: 50%;
+        }
+
+        &--light {
+            background: #FFF;
+            color: #000;
+            @include media-breakpoint-up(lg) {
+                padding: 5rem 5vw 5rem 20vw;
+            }
+        }
+        &--dark {
+            background: #000;
+            color: #FFF;
+            @include media-breakpoint-up(lg) {
+                padding: 5rem 20vw 5rem 5vw;
+            }
+        }
+    }
+}
+.circle {
+    width: 25vw;
+    height: 25vw;
+    background: linear-gradient( -90deg, black 50%, white 50%, );
+    border-radius: 50%;
+    padding: 3px;
+    transform-origin: center;
+    display: block;
+
+    &__inner {
+        background: linear-gradient( -90deg, white 50%, black 50%, );
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+    }
+}

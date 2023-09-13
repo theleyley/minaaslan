@@ -1,4 +1,31 @@
-<section>
-    {{ pageData?.powerWordEnd }}
+<section class="hero">
+    <img src="{{ buildPath(pageData?.hero?.data?.attributes?.url) }}" class="img-fluid" [attr.alt]="pageData?.hero?.data?.attributes?.alternativeText" class="img-fluid hero__image" />
 </section>
-<app-cards></app-cards>
+<section class="container power-words">
+    <div class="row power-words__animated">
+
+    </div>
+    <div class="row py-5 d-flex">
+        <div class="col-12 col-md-6 order-1 order-md-2">
+            <h2 class="power-words__word-end">{{ pageData?.powerWordEnd }}</h2>
+        </div>
+        <div class="col-12 mt-3 mt-md-0 col-md-6 col-lg-5 me-lg-auto order-2 order-md-1 d-flex align-items-end">
+            {{ pageData?.blurb }}
+        </div>
+    </div>
+</section>
+<section class="work-animation">
+    <img src="{{ buildPath(pageData?.workSectionImage?.data?.attributes?.url) }}" class="img-fluid w-100" [attr.alt]="pageData?.workSectionImage?.data?.attributes?.alternativeText" />
+    <app-cards></app-cards>
+</section>
+<section class="testimonials d-lg-flex position-relative">
+    <div class="testimonials__bg testimonials__bg--dark d-flex align-items-center">
+        <div class="testimonials__blurb testimonials__blurb--left me-auto">{{ pageData?.leftBlurb }}</div>
+    </div>
+    <div class="testimonials__bg testimonials__bg--light d-flex align-items-center">
+        <div class="testimonials__blurb testimonials__blurb--right ms-auto">{{ pageData?.rightBlurb }}</div>
+    </div>
+    <div class="circle flex-shrink-0 position-absolute top-50 start-50 translate-middle">
+        <div class="circle__inner"></div>
+    </div>
+</section>
