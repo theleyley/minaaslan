@@ -7,7 +7,7 @@
     </div>
     <div class="row py-5 d-flex">
         <div class="col-12 col-md-6 order-1 order-md-2">
-            <h2 class="power-words__word-end">{{ pageData?.powerWordEnd }}</h2>
+            <h2 class="power-words__word-end">{{ _powerWord$ | async }}</h2>
         </div>
         <div class="col-12 mt-3 mt-md-0 col-md-6 col-lg-5 me-lg-auto order-2 order-md-1 d-flex align-items-end">
             {{ pageData?.blurb }}
