@@ -1,0 +1,54 @@
+$duration: .5s;
+
+.work {
+  background: #E1DAD2;
+  font-family: 'Bebas Neue', sans-serif;
+  &__card {
+    background-color: #FFF;
+    transition: background-color $duration ease;
+    overflow: hidden;
+    word-wrap: normal;
+    word-break: keep-all;
+
+    &-title {
+      text-transform: uppercase;
+      font-size: 3rem;
+      line-height: 2.5rem;
+    }
+    &--top {
+      background-color: #000;
+      color: #FFF;
+      padding: 6rem 2rem 0 2rem;
+      transition: background-color $duration ease, color $duration ease;
+      span {
+        display: inline-block;
+        transform: translateY(.4rem);
+      }
+    }
+    &--bottom {
+      color: #000;
+      padding: 0 2rem 5rem 2rem;
+      transition: color $duration ease;
+      span {
+        display: inline-block;
+        transform: translateX(2rem);
+        transition: transform ($duration * 2) ease;
+        width: fit-content;
+      }
+    }
+    &:hover,
+    &:focus {
+      background: #000;
+      .work__card--top {
+        background: #FFF;
+        color: #000;
+      }
+      .work__card--bottom {
+        color: #FFF;
+        span {
+          transform: translateX(0rem);
+        }
+      }
+    }
+  }
+}

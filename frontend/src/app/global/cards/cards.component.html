@@ -1,0 +1,16 @@
+<section class="work py-5" *ngIf="works">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6 mb-5" *ngFor="let work of works">
+                <div class="work__card h-100 clickable"  (click)="viewWork(work.attributes)">
+                    <div class="work__card-body">
+                        <h3 class="work__card-title">
+                            <div class="work__card--top"><span>{{ work.attributes?.titleTop }}</span></div>
+                            <div class="work__card--bottom"><span>{{ work.attributes?.titleBottom }}</span></div>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
