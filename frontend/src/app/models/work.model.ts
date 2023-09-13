@@ -1,5 +1,5 @@
 export interface WorkModel {
-    id?: string;
+    id?: number;
     attributes: WorkAttribute;
 }
 

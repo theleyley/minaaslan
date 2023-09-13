@@ -5,8 +5,6 @@ import {WorkComponent} from "./work/work.component";
 import {HomeComponent} from "./home/home.component";
 import {EthosComponent} from "./ethos/ethos.component";
 import {ContactComponent} from "./contact/contact.component";
-import {WorkItemComponent} from "./work/work-item/work-item.component";
-
 const routes: Routes = [
   {
     path: '',

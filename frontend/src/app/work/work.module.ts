@@ -2,15 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WorkComponent } from './work.component';
 import {HttpClientModule} from '@angular/common/http';
-import { WorkItemComponent } from './work-item/work-item.component';
 import {GlobalModule} from '../global/global.module';
 
 
 
 @NgModule({
   declarations: [
-    WorkComponent,
-    WorkItemComponent
+    WorkComponent
   ],
   imports: [
     CommonModule,
@@ -20,8 +18,7 @@ import {GlobalModule} from '../global/global.module';
   providers: [
   ],
   exports: [
-      WorkComponent,
-      WorkItemComponent
+      WorkComponent
   ]
 })
 export class WorkModule { }
