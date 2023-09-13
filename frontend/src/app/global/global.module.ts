@@ -4,6 +4,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { GlobalService } from './services/global.service';
+import { CardsComponent } from './cards/cards.component';
 
 
 
@@ -11,7 +12,8 @@ import { GlobalService } from './services/global.service';
 @NgModule({
   declarations: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    CardsComponent
   ],
   imports: [
     CommonModule,
@@ -22,7 +24,8 @@ import { GlobalService } from './services/global.service';
   ],
   exports: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    CardsComponent
   ]
 })
 export class GlobalModule { }
