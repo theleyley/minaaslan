@@ -42,4 +42,14 @@ export class WorkComponent implements OnInit {
     return isValid;
   }
 
+  getHash(url: any) {
+    let video_id = url.split('be/')[1];
+    const ampersandPosition = video_id.indexOf('&');
+    if (ampersandPosition !== -1) {
+      video_id = video_id.substring(0, ampersandPosition);
+    }
+
+    return video_id;
+  }
+
 }

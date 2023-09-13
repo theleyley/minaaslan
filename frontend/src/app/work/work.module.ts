@@ -4,6 +4,7 @@ import { WorkComponent } from './work.component';
 import {HttpClientModule} from '@angular/common/http';
 import {GlobalModule} from '../global/global.module';
 import {MarkdownModule} from "ngx-markdown";
+import {YouTubePlayerModule} from "@angular/youtube-player";
 
 
 
@@ -15,7 +16,8 @@ import {MarkdownModule} from "ngx-markdown";
     CommonModule,
     HttpClientModule,
     GlobalModule,
-    MarkdownModule.forRoot()
+    MarkdownModule.forRoot(),
+    YouTubePlayerModule
   ],
   providers: [
   ],
