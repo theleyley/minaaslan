@@ -11,12 +11,9 @@
 @import "./../../../node_modules/bootstrap/scss/mixins";
 
 // 5. Add additional custom code here
-
 .hero {
     &__image {
         height: 75vh;
-        width: 100%;
-        object-fit: cover;
     }
 }
 .power-words {

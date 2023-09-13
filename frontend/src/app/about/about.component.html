@@ -1,3 +1,24 @@
-<section class="hero d-flex">
-    <img src="{{ buildPath(pageData?.bannerImage?.data?.attributes?.url) }}" class="img-fluid" [attr.alt]="pageData?.bannerImage?.data?.attributes?.alternativeText" class="img-fluid hero__image" />
+<section class="hero d-lg-flex">
+    <div class="hero__content hero--half d-flex align-items-end justify-content-center py-5 py-lg-0">
+        <div class="hero__blurb" *ngIf="pageData?.blurb">
+            <markdown [data]="pageData.blurb"></markdown>
+        </div>
+    </div>
+    <div class="hero--half hero__image-container">
+        <img src="{{ buildPath(pageData?.bannerImage?.data?.attributes?.url) }}" class="img-fluid" [attr.alt]="pageData?.bannerImage?.data?.attributes?.alternativeText" class="img-fluid hero__image" />
+    </div>
+</section>
+<section class="experience__section">
+    <div class="container">
+        <div class="row">
+            <div class="experience col-12 col-md-6" *ngFor="let group of pageData.group">
+                <h3>{{ group.title }}</h3>
+                <div class="experience__group">
+                    <ul class="stickies">
+                        <li class="stickies__single" *ngFor="let sticky of group.highlights">{{ sticky.highlight }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>

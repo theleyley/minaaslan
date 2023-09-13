@@ -14,6 +14,13 @@ body {
     cursor: pointer;
 }
 
+.hero {
+    &__image {
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
 .btn {
     border-radius: 0;
     font-weight: 600;

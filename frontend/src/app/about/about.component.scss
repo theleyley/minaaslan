@@ -1,0 +1,100 @@
+// Custom.scss
+// Option B: Include parts of Bootstrap
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "./../../../node_modules/bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "./../../../node_modules/bootstrap/scss/variables";
+@import "./../../../node_modules/bootstrap/scss/mixins";
+
+// 5. Add additional custom code here
+
+$navbar-height: 96px;
+
+.hero {
+    background: #8E041E;
+    &__blurb {
+        width: 75%;
+    }
+    @include media-breakpoint-up(lg) {
+        &--half {
+            width: 50%;
+        }
+        height: calc(100vh - 96px);
+        &__image {
+            height: 100%;
+        }
+        &__blurb {
+            margin-bottom: 5vh;
+        }
+    }
+}
+.experience {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    &__section {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+
+    h3 {
+        font-family: 'Bebas Neue', serif;
+        font-size: 3rem;
+        @include media-breakpoint-up(md) {
+            text-align: center;;
+        }
+        @include media-breakpoint-up(lg) {
+            font-size: 4rem;
+        }
+    }
+}
+.stickies {
+    list-style-type: none;
+    &__single {
+        width: 150px;
+        height: 150px;
+        display: inline-flex;
+        justify-content: center;
+        align-content: center;
+        font-family: 'Rock Salt', serif;
+        color: #000;
+        text-align: center;
+        padding: 1rem;
+        position: relative;
+    }
+}
+
+// Define your color palette
+$colors: #F95800, #B400FD, #95FF02, #3ECBEA, #E5FF39, #FE0D9A;
+
+// SCSS loop to iterate through each .experience div
+@for $i from 1 through 100 { // Adjust the number based on the number of .experience divs
+
+  // Generate a unique class for each .experience div
+  $experience-class: ".experience:nth-child(#{$i})";
+
+  // Apply random background color and rotation to each <li> element
+  #{$experience-class} {
+    @for $j from 1 through 100 { // Adjust the number based on the number of <li> elements
+
+        // Select a random color from the palette
+        $random-color: nth($colors, random(length($colors)));
+
+        $min: -20;
+        $max: 20;
+
+        // Generate a random number between -10 and 20
+        $random-rotation: random(($max - $min + 1)) + $min;
+
+        // Apply the random background color and rotation
+        li:nth-child(#{$j}) {
+            background-color: $random-color;
+            transform: rotate(#{$random-rotation}deg);
+        }
+      }
+  }
+}
