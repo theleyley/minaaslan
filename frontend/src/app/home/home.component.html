@@ -18,14 +18,14 @@
     <img src="{{ buildPath(pageData?.workSectionImage?.data?.attributes?.url) }}" class="img-fluid w-100" [attr.alt]="pageData?.workSectionImage?.data?.attributes?.alternativeText" />
     <app-cards></app-cards>
 </section>
-<section class="testimonials d-lg-flex position-relative">
-    <div class="testimonials__bg testimonials__bg--dark d-flex align-items-center">
+<section class="testimonials d-md-flex position-relative">
+    <div class="testimonials__bg testimonials__bg--dark d-md-flex align-items-md-center">
         <div class="testimonials__blurb testimonials__blurb--left me-auto">{{ pageData?.leftBlurb }}</div>
     </div>
-    <div class="testimonials__bg testimonials__bg--light d-flex align-items-center">
+    <div class="testimonials__bg testimonials__bg--light d-md-flex align-items-md-center">
         <div class="testimonials__blurb testimonials__blurb--right ms-auto">{{ pageData?.rightBlurb }}</div>
     </div>
-    <div class="circle flex-shrink-0 position-absolute top-50 start-50 translate-middle">
+    <div class="d-none d-md-block circle flex-shrink-0 position-absolute top-50 start-50 translate-middle">
         <div class="circle__inner"></div>
     </div>
 </section>

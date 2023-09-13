@@ -35,24 +35,28 @@
     min-height: 25vw;
 
     &__blurb {
-        width: calc(50vw - 13vw);
+        @include media-breakpoint-up(md) {
+            width: calc(50vw - 13vw);
+        }
     }
     &__bg {
-        @include media-breakpoint-up(lg) {
+        @include media-breakpoint-up(md) {
             width: 50%;
         }
 
         &--light {
             background: #FFF;
             color: #000;
-            @include media-breakpoint-up(lg) {
+            padding: 5rem 3rem;
+            @include media-breakpoint-up(md) {
                 padding: 5rem 5vw 5rem 20vw;
             }
         }
         &--dark {
             background: #000;
             color: #FFF;
-            @include media-breakpoint-up(lg) {
+            padding: 5rem 3rem;
+            @include media-breakpoint-up(md) {
                 padding: 5rem 20vw 5rem 5vw;
             }
         }
