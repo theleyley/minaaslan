@@ -50,7 +50,7 @@
                  </div>
             </div>
             <div class="col-12 col-sm-5 d-flex align-items-center">
-                <p>{{ workrow.blurb }}</p>
+                <markdown [data]="workrow.blurb"></markdown>
             </div>
             <div
                 *ngIf="workrow.mediaType === 'YouTube Video'"
