@@ -50,7 +50,7 @@
                  </div>
             </div>
             <div class="col-12 col-sm-5 d-flex align-items-center">
-                <p>{{ workrow.blurb }}</p>
+                <markdown [data]="workrow.blurb"></markdown>
             </div>
             <div
                 *ngIf="workrow.mediaType === 'YouTube Video'"
@@ -61,7 +61,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        modal works!
+                        <youtube-player [videoId]="getHash(workrow.youtubeUrl)"></youtube-player>
                     </div>
                     </div>
                 </div>
