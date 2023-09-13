@@ -1,13 +1,13 @@
 <section class="hero">
     <img src="{{ buildPath(pageData?.hero?.data?.attributes?.url) }}" class="img-fluid" [attr.alt]="pageData?.hero?.data?.attributes?.alternativeText" class="img-fluid hero__image" />
 </section>
-<section class="container power-words">
+<section class="container py-5 py-md-5 power-words">
     <div class="row power-words__animated">
-
+        <h2 class="power-words__word">Economist</h2>
     </div>
-    <div class="row py-5 d-flex">
+    <div class="row py-md-5 d-flex">
         <div class="col-12 col-md-6 order-1 order-md-2">
-            <h2 class="power-words__word-end">{{ pageData?.powerWordEnd }}</h2>
+            <h3 class="power-words__word-end">{{ pageData?.powerWordEnd }}</h3>
         </div>
         <div class="col-12 mt-3 mt-md-0 col-md-6 col-lg-5 me-lg-auto order-2 order-md-1 d-flex align-items-end">
             {{ pageData?.blurb }}

@@ -20,14 +20,33 @@
     }
 }
 .power-words {
-    &__word-end {
-        font-family: 'Libre Bodoni', serif;
+    overflow: hidden;
+    word-break: keep-all;
+    &__word {
         font-size: 5rem;
+        line-height: 90%;
+        font-family: 'Bebas Neue', san-serif;
+        @include media-breakpoint-up(md) {
+            font-size: 8rem;
+        }
         @include media-breakpoint-up(lg) {
-            font-size: 6rem;
+            font-size: 10rem;
         }
         @include media-breakpoint-up(xl) {
-            font-size: 7rem;
+            font-size: 15rem;
+        }
+        &-end {
+            font-family: 'Libre Bodoni', serif;
+            font-size: 4rem;
+            @include media-breakpoint-up(md) {
+                font-size: 5rem;
+            }
+            @include media-breakpoint-up(lg) {
+                font-size: 6rem;
+            }
+            @include media-breakpoint-up(xl) {
+                font-size: 7rem;
+            }
         }
     }
 }
