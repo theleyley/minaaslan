@@ -23,14 +23,41 @@
         <div
             *ngFor="let workrow of workData.workRow;
             let index = index"
-            class="row work__detail"
+            class="row d-flex justify-content-between work__detail"
             [ngClass]="{ 'work__detail--left': 0 === index % 2, 'work__detail--right': 0 !== index % 2}">
-            <div class="col-12 col-sm-6 col-md-6">
+            <div class="col-12 col-sm-6 work__media">
                 <img src="{{ buildPath(workrow?.primaryImage?.data?.attributes?.url) }}"
                  alt="{{ workrow.primaryImage.data.attributes.alternativeText }}"
-                 class="img-fluid work__image">
+                 class="img-fluid work__media-image">
+                 <div class="work__media-overlay"
+                 *ngIf="isNonImageMediaType(workrow.mediaType)">
+                    <button
+                        *ngIf="workrow.mediaType === 'YouTube Video'"
+                        type="button"
+                        class="btn btn-primary"
+                        data-bs-toggle="modal"
+                        [attr.data-bs-target]="'#video-' + workrow.id">{{workrow.mediaType}}
+                    </button>
+                    <div
+                        *ngIf="workrow.mediaType === 'YouTube Video'"
+                        class="modal fade" [attr.id]="'video-' + workrow.id" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                modal works!
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                 <span class="work__media-index">
+                    0{{ index + 1 }}
+                 </span>
             </div>
-            <div class="col-12 col-sm-6 col-md-6 d-flex align-items-center">
+            <div class="col-12 col-sm-5 d-flex align-items-center">
                 <p>{{ workrow.blurb }}</p>
             </div>
         </div>
