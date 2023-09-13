@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   pageData: any;
   _powerWord$ = new BehaviorSubject(''); //you can set initial value as per your need
   powerWordList: any;
-  counter = interval(5000);
+  counter = interval(900);
   constructor(private workService: WorkService, private router: Router) { }
 
   ngOnInit(): void {
