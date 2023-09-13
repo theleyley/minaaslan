@@ -27,9 +27,7 @@ export class HomeComponent implements OnInit {
         if (this.powerWordList) {
           this._powerWord$.next(this.powerWordList[0]['Word']);
           this.startPowerWordStream();
-
         }
-
       }
     })
 
@@ -38,9 +36,14 @@ export class HomeComponent implements OnInit {
   startPowerWordStream() {
       const stream = this.counter.pipe(take(this.powerWordList.length));
       stream.subscribe(number => {
-        const index = number + 1;
-        this._powerWord$.next(this.powerWordList[index]['Word']);
-      })
+        // The condition accounts for the first item already being set
+        if (number > 0) {
+          this._powerWord$.next(this.powerWordList[number]['Word']);
+          if ((number + 1) === this.powerWordList.length) {
+            this.startPowerWordStream();
+          }
+        }
+      });
   }
 
   buildPath(path: any) {
