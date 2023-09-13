@@ -3,6 +3,7 @@ import {WorkService} from "../services/work.services";
 import {WorkAttribute, WorkModel} from "../models/work.model";
 import {environment} from "../../environments/environment";
 import {Router} from '@angular/router';
+import {BehaviorSubject, interval, take} from "rxjs";
 
 @Component({
   selector: 'app-home',
@@ -12,14 +13,34 @@ import {Router} from '@angular/router';
 export class HomeComponent implements OnInit {
   env = environment;
   pageData: any;
+  _powerWord$ = new BehaviorSubject(''); //you can set initial value as per your need
+  powerWordList: any;
+  counter = interval(5000);
   constructor(private workService: WorkService, private router: Router) { }
 
   ngOnInit(): void {
     this.workService.getPageData().subscribe((data) => {
       if (data) {
         this.pageData = data.attributes;
+        this.powerWordList = data.attributes.word;
+
+        if (this.powerWordList) {
+          this._powerWord$.next(this.powerWordList[0]['Word']);
+          this.startPowerWordStream();
+
+        }
+
       }
     })
+
+  }
+
+  startPowerWordStream() {
+      const stream = this.counter.pipe(take(this.powerWordList.length));
+      stream.subscribe(number => {
+        const index = number + 1;
+        this._powerWord$.next(this.powerWordList[index]['Word']);
+      })
   }
 
   buildPath(path: any) {
