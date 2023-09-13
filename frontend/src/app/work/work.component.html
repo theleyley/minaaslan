@@ -29,36 +29,39 @@
                 <img src="{{ buildPath(workrow?.primaryImage?.data?.attributes?.url) }}"
                  alt="{{ workrow.primaryImage.data.attributes.alternativeText }}"
                  class="img-fluid work__media-image">
-                 <div class="work__media-overlay"
-                 *ngIf="isNonImageMediaType(workrow.mediaType)">
-                    <button
-                        *ngIf="workrow.mediaType === 'YouTube Video'"
-                        type="button"
-                        class="btn btn-transparent"
-                        data-bs-toggle="modal"
-                        [attr.data-bs-target]="'#video-' + workrow.id"><i class="bi bi-play-fill"></i>
-                    </button>
-                    <div
-                        *ngIf="workrow.mediaType === 'YouTube Video'"
-                        class="modal fade" [attr.id]="'video-' + workrow.id" tabindex="-1" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                modal works!
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                </div>
+                 <button
+                    *ngIf="workrow.mediaType === 'YouTube Video'"
+                    type="button"
+                    class="btn btn-transparent position-absolute top-50 start-50 translate-middle work__media-action"
+                    data-bs-toggle="modal"
+                    [attr.data-bs-target]="'#video-' + workrow.id"><i class="bi bi-play-fill"></i>
+                </button>
+                <a href="{{ buildPath(workrow.pdf.data?.attributes?.url) }}"
+                    *ngIf="workrow.mediaType === 'PDF' && workrow?.pdf?.data !== null"
+                    target="_blank"
+                    class="btn btn-transparent position-absolute top-50 start-50 translate-middle work__media-action"
+                >Click to View PDF
+                </a>
                  <span class="work__media-index">
                     0{{ index + 1 }}
                  </span>
             </div>
             <div class="col-12 col-sm-5 d-flex align-items-center">
                 <p>{{ workrow.blurb }}</p>
+            </div>
+            <div
+                *ngIf="workrow.mediaType === 'YouTube Video'"
+                class="modal fade" [attr.id]="'video-' + workrow.id" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        modal works!
+                    </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

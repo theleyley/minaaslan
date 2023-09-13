@@ -16,14 +16,21 @@ body {
 
 .btn {
     border-radius: 0;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: .75rem 1.25rem;
     &-transparent {
-        background-color: rgba(255, 255, 255, 0.5);
+        background-color: rgba(255, 255, 255, 0.85);
+        border: 1px solid #000;
         color: #000;
         transition: background-color .5s ease, color .5s ease;
 
         &:hover {
-            background-color: rgba(0,0,0,0.5);
+            background-color: rgba(0,0,0,0.75);
             color: #FFF;
         }
+    }
+    .bi {
+        font-size: 2rem;
     }
 }
