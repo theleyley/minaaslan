@@ -11,13 +11,16 @@ import {environment} from "../../environments/environment";
 export class WorkComponent implements OnInit {
   workData: any;
   env = environment;
+  workId: any;
+  workDataId: any;
   constructor(private route: ActivatedRoute, private workService: WorkService) { }
 
   ngOnInit(): void {
-    const workId = this.route.snapshot.paramMap.get('id');
-    this.workService.getWorkItem(workId).subscribe((data) => {
+    this.workId = this.route.snapshot.paramMap.get('id');
+    this.workService.getWorkItem(this.workId).subscribe((data) => {
       if(data && data.length) {
         this.workData = data[0].attributes;
+        this.workDataId = data[0].id;
       }
     })
   }
