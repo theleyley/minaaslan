@@ -26,4 +26,14 @@ export class WorkComponent implements OnInit {
     return `${this.env.apiBase}${path}`;
   }
 
+  isNonImageMediaType(type: string) {
+    let isValid = false;
+
+    if (type === 'YouTube Video' || type === 'PDF') {
+        isValid = true;
+    }
+
+    return isValid;
+  }
+
 }

@@ -47,13 +47,38 @@ $title-font-size-base: 10rem;
             flex-direction: row-reverse;
         }
     }
-    &__image {
-        -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-        filter: grayscale(100%);
-        transition: filter .6s ease;
+    &__media {
+        position: relative;
+
+        &-index {
+            position: absolute;
+            display: inline-block;
+            font-size: 2rem;
+            color: #FFF;
+            z-index: 2;
+            top: .5rem;
+            padding: .25rem .5rem;
+            background: rgba(0,0,0,0.5);
+
+            .work__detail--left & {
+                left: 1.25rem;
+            }
+
+            .work__detail--right & {
+                right: 1.25rem;
+            }
+        }
+
+        &-image {
+            -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+            filter: grayscale(100%);
+            transition: filter .6s ease;
+        }
         &:hover {
-            filter: none;
-            -webkit-filter: grayscale(0);
+            .work__media-image {
+                filter: none;
+                -webkit-filter: grayscale(0);
+            }
         }
     }
 }
