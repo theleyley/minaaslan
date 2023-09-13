@@ -16,7 +16,10 @@ export class WorkComponent implements OnInit {
   constructor(private route: ActivatedRoute, private workService: WorkService) { }
 
   ngOnInit(): void {
-    this.workId = this.route.snapshot.paramMap.get('id');
+    this.route.params.subscribe(params => {
+      this.workId = params['id'];
+    });
+
     this.workService.getWorkItem(this.workId).subscribe((data) => {
       if(data && data.length) {
         this.workData = data[0].attributes;

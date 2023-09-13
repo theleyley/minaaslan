@@ -15,18 +15,6 @@ export class CardsComponent implements OnInit {
   constructor(private router: Router, private workService: WorkService) { }
 
   ngOnInit(): void {
-    this.getWorkItems();
-  }
-
-  viewWork(work: WorkModel) {
-    const route = work.attributes.slug;
-    this.router.navigateByUrl(`/work/${route}`);
-    this.excludedId = work.id;
-    this.getWorkItems();
-  }
-
-  getWorkItems() {
-    this.works = [];
     this.workService.getWork().subscribe((workItems) => {
       if (workItems) {
 
@@ -42,6 +30,12 @@ export class CardsComponent implements OnInit {
 
       }
     })
+  }
+
+  viewWork(work: WorkModel) {
+    const route = work.attributes.slug;
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() =>
+        this.router.navigate([`/work/${route}`]));
   }
 
 }
