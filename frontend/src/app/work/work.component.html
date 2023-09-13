@@ -1,5 +1,39 @@
-<div *ngIf="workData">
-    <h1>{{ workData.title }}</h1>
-    <h2>{{ workData.subhead }}</h2>
-    <p>{{ workData.blurb }}</p>
+<div class="work" *ngIf="workData">
+<section class="work__title">
+    <h1 class="d-none">{{ workData.titleTop }} {{ workData.titleBottom }}</h1>
+    <div class="work__title-section work__title-section--top d-flex">
+        <h2 class="align-self-end">{{ workData.titleTop }}</h2>
+    </div>
+    <div class="work__title-section work__title-section--bottom">
+        <div class="work__title-section-container container-fluid d-flex flex-column h-100">
+            <div class="row flex-shrink 0">
+                <h2>{{ workData.titleBottom }}</h2>
+                <div class="col-12 col-md-7">
+                    <h3>{{ workData.subhead }}</h3>
+                </div>
+            </div>
+            <div class="row align-self-end mt-auto">
+                <div class="col-12 col-md-6 ms-auto work__blurb"><p class="lead">{{ workData.blurb }}</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="work__details">
+    <div class="container">
+        <div
+            *ngFor="let workrow of workData.workRow;
+            let index = index"
+            class="row work__detail"
+            [ngClass]="{ 'work__detail--left': 0 === index % 2, 'work__detail--right': 0 !== index % 2}">
+            <div class="col-12 col-sm-6 col-md-6">
+                <img src="{{ buildPath(workrow?.primaryImage?.data?.attributes?.url) }}"
+                 alt="{{ workrow.primaryImage.data.attributes.alternativeText }}"
+                 class="img-fluid work__image">
+            </div>
+            <div class="col-12 col-sm-6 col-md-6 d-flex align-items-center">
+                <p>{{ workrow.blurb }}</p>
+            </div>
+        </div>
+    </div>
+</section>
 </div>

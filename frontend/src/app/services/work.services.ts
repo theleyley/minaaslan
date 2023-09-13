@@ -36,7 +36,7 @@ export class WorkService {
     }
 
     getWorkItem(id: any): Observable<WorkModel[]> {
-        const url = `${this.baseUrl}/api/work-entries?filters[slug][$eq]=${id}&populate=*`;
+        const url = `${this.baseUrl}/api/work-entries?filters[slug][$eq]=${id}&populate[workRow][populate]=*`;
         return this.http.get<any>(url, {withCredentials: true})
             .pipe(map((response) => {
                 return response.data;

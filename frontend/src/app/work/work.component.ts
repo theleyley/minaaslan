@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {WorkService} from '../services/work.services';
+import {environment} from "../../environments/environment";
 
 @Component({
-  selector: 'ms-portfolio',
+  selector: 'ma-work',
   templateUrl: './work.component.html',
   styleUrls: ['./work.component.scss']
 })
 export class WorkComponent implements OnInit {
   workData: any;
+  env = environment;
   constructor(private route: ActivatedRoute, private workService: WorkService) { }
 
   ngOnInit(): void {
@@ -18,6 +20,10 @@ export class WorkComponent implements OnInit {
         this.workData = data[0].attributes;
       }
     })
+  }
+
+  buildPath(path: any) {
+    return `${this.env.apiBase}${path}`;
   }
 
 }
