@@ -25,7 +25,9 @@
             let index = index"
             class="row d-flex justify-content-between work__detail"
             [ngClass]="{ 'work__detail--left': 0 === index % 2, 'work__detail--right': 0 !== index % 2}">
-            <div class="col-12 col-sm-6 work__media">
+            <div class="col-12 col-sm-6">
+                <div class="work__media">
+                <div class="work__media-outline position-absolute"></div>
                 <img src="{{ buildPath(workrow?.primaryImage?.data?.attributes?.url) }}"
                  alt="{{ workrow.primaryImage.data.attributes.alternativeText }}"
                  class="img-fluid work__media-image">
@@ -45,6 +47,7 @@
                  <span class="work__media-index">
                     0{{ index + 1 }}
                  </span>
+                 </div>
             </div>
             <div class="col-12 col-sm-5 d-flex align-items-center">
                 <p>{{ workrow.blurb }}</p>
