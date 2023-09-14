@@ -6,7 +6,6 @@ import {environment} from "../../environments/environment";
 import {WorkService} from "../services/work.services";
 import {map} from 'rxjs/operators';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-contact',
