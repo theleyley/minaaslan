@@ -28,7 +28,7 @@
                     </div>
                 </form>
                 <div>
-                    <div class="contact__response" *ngIf="onSuccess || onSubmitFail">
+                    <div class="contact__response mb-5" *ngIf="onSuccess || onSubmitFail">
                         <markdown [data]="pageData.thankYouText" *ngIf="onSuccess"></markdown>
                         <markdown [data]="pageData?.formSubmitFailText" *ngIf="onSubmitFail"></markdown>
                     </div>
