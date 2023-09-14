@@ -24,6 +24,7 @@
     "marked": "^4.3.0",
     "ngx-markdown": "^16.0.0",
     "rxjs": "~7.5.0",
+    "strapi-plugin-ezforms": "^0.1.5",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.3"
   },
