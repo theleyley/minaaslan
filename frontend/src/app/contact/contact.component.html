@@ -22,7 +22,7 @@
                         <textarea type="text" formControlName="message" placeholder="MESSAGE*"></textarea>
                     </div>
 
-                    <button class="button" type="submit">Some Arrow</button>
+                    <button class="button" type="submit" [disabled]="!contactForm.valid">Some Arrow</button>
                 </form>
 
                 <div *ngIf="onSubmission">
