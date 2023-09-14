@@ -1,1 +1,30 @@
-<p>contact works!</p>
+<div class="contact-wrapper">
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()"  *ngIf="!onSubmission">
+        <div class="contact-wrapper">
+            <h1>Say Hello</h1>
+            <div class="contact-body">
+                <div class="form-control full-width">
+                    <input type="text" formControlName="fullName" placeholder="FULL NAME*">
+                </div>
+                <div class="form-control">
+                    <input type="text" formControlName="email" placeholder="EMAIL*">
+                </div>
+
+                <div class="form-control">
+                    <input type="text" formControlName="subject" placeholder="SUBJECT*">
+                </div>
+
+                <div class="form-control full-width">
+                    <textarea type="text" formControlName="message" placeholder="MESSAGE*"></textarea>
+                </div>
+
+                <button class="button" type="submit">Some Arrow</button>
+            </div>
+        </div>
+    </form>
+
+    <div *ngIf="onSubmission">
+        <span>Thanks Nigga</span>
+        <p (click)="route('')" style="cursor: pointer">Click Me to go somewhere</p>
+    </div>
+</div>
