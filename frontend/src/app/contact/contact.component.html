@@ -1,30 +1,38 @@
-<div class="contact-wrapper">
-    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()"  *ngIf="!onSubmission">
-        <div class="contact-wrapper">
-            <h1>Say Hello</h1>
-            <div class="contact-body">
-                <div class="form-control full-width">
-                    <input type="text" formControlName="fullName" placeholder="FULL NAME*">
-                </div>
-                <div class="form-control">
-                    <input type="text" formControlName="email" placeholder="EMAIL*">
-                </div>
-
-                <div class="form-control">
-                    <input type="text" formControlName="subject" placeholder="SUBJECT*">
-                </div>
-
-                <div class="form-control full-width">
-                    <textarea type="text" formControlName="message" placeholder="MESSAGE*"></textarea>
-                </div>
-
-                <button class="button" type="submit">Some Arrow</button>
+<section class="hero d-flex flex-column flex-lg-row">
+    <div class="hero__content hero--half d-flex align-items-end justify-content-center py-5 py-lg-0 order-2 order-lg-1">
+        <div class="hero__blurb">
+            <h2 class="hero__title" *ngIf="pageData?.header">{{ pageData.header }}</h2>
+            <div class="lead" *ngIf="pageData?.blurb">
+                <markdown [data]="pageData.blurb"></markdown>
             </div>
-        </div>
-    </form>
+            <section class="contact">
+                <form class="contact__form" [formGroup]="contactForm" (ngSubmit)="onSubmit()"  *ngIf="!onSubmission">
+                    <div class="contact__form-control contact__form-control--full">
+                        <input type="text" formControlName="fullName" placeholder="FULL NAME*">
+                    </div>
+                    <div class="contact__form-control contact-form--email contact__form-control--half">
+                        <input type="text" formControlName="email" placeholder="EMAIL*">
+                    </div>
 
-    <div *ngIf="onSubmission">
-        <span>Thanks Nigga</span>
-        <p (click)="route('')" style="cursor: pointer">Click Me to go somewhere</p>
+                    <div class="contact__form-control contact__form--subject contact__form-control--half">
+                        <input type="text" formControlName="subject" placeholder="SUBJECT*">
+                    </div>
+
+                    <div class="contact__form-control contact__form-control--full">
+                        <textarea type="text" formControlName="message" placeholder="MESSAGE*"></textarea>
+                    </div>
+
+                    <button class="button" type="submit">Some Arrow</button>
+                </form>
+
+                <div *ngIf="onSubmission">
+                    <span>Thanks Nigga</span>
+                    <p (click)="route('')" style="cursor: pointer">Click Me to go somewhere</p>
+                </div>
+            </section>
+        </div>
     </div>
-</div>
+    <div class="hero--half hero__image-container order-1 order-lg-2">
+        <img src="{{ buildPath(pageData?.bannerImage?.data?.attributes?.url) }}" class="img-fluid" [attr.alt]="pageData?.bannerImage?.data?.attributes?.alternativeText" class="img-fluid hero__image" />
+    </div>
+</section>

@@ -1,10 +1,10 @@
-<section class="hero d-lg-flex">
-    <div class="hero__content hero--half d-flex align-items-end justify-content-center py-5 py-lg-0">
+<section class="hero d-flex flex-column flex-lg-row">
+    <div class="hero__content hero--half d-flex align-items-end justify-content-center py-5 py-lg-0 order-2 order-lg-1">
         <div class="hero__blurb" *ngIf="pageData?.blurb">
             <markdown [data]="pageData.blurb"></markdown>
         </div>
     </div>
-    <div class="hero--half hero__image-container">
+    <div class="hero--half hero__image-container order-1 order-lg-2">
         <img src="{{ buildPath(pageData?.bannerImage?.data?.attributes?.url) }}" class="img-fluid" [attr.alt]="pageData?.bannerImage?.data?.attributes?.alternativeText" class="img-fluid hero__image" />
     </div>
 </section>

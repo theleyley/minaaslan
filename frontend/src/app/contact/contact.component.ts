@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormControl, Validators} from '@angular/forms';
 import {Subscription} from 'rxjs';
 import {Router} from '@angular/router';
+import {environment} from "../../environments/environment";
+import {WorkService} from "../services/work.services";
 
 @Component({
   selector: 'app-contact',
@@ -9,7 +11,9 @@ import {Router} from '@angular/router';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
+  env = environment;
   payload = {};
+  pageData: any;
   formSubscription: Subscription = new Subscription();
   onSubmission = false;
   contactForm = new FormGroup({
@@ -18,12 +22,17 @@ export class ContactComponent implements OnInit {
     subject: new FormControl('', [Validators.required]),
     message: new FormControl<string>('', [Validators.required])
   });
-  constructor(private router: Router) { }
+  constructor(private workService: WorkService, private router: Router) { }
 
   ngOnInit(): void {
     this.formSubscription = this.contactForm.valueChanges.subscribe((values: any) => {
       this.constructPayload(values);
     });
+    this.workService.getContactPageData().subscribe((data) => {
+      if (data) {
+        this.pageData = data.attributes;
+      }
+    })
   }
 
   constructPayload(values: any) {
@@ -42,5 +51,9 @@ export class ContactComponent implements OnInit {
 
   route(route: any) {
     this.router.navigate([`${route}`]);
+  }
+
+  buildPath(path: any) {
+    return `${this.env.apiBase}${path}`;
   }
 }

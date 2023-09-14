@@ -1,0 +1,66 @@
+// Custom.scss
+// Option B: Include parts of Bootstrap
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "./../../../node_modules/bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "./../../../node_modules/bootstrap/scss/variables";
+@import "./../../../node_modules/bootstrap/scss/mixins";
+
+// 5. Add additional custom code here
+
+.hero {
+    @include media-breakpoint-up(lg) {
+        height: calc(100vh - 96px - 90px);
+        &__image {
+            height: 100%;
+        }
+        &__blurb {
+            margin-bottom: 5vh;
+        }
+    }
+    &__title {
+        font-family: 'Libre Bodoni', serif;
+        text-transform: uppercase;
+        font-size: 3rem;
+        line-height: 90%;
+        @include media-breakpoint-up(lg) {
+            font-size: 9rem;
+        }
+    }
+}
+
+.contact {
+    &__form {
+        &-control {
+            padding-top: .5rem;
+            padding-bottom: 1.5rem;
+            &--full {
+                width: 100%;
+            }
+            &--half {
+                width: 45%;
+                display: inline-block;
+                & + .contact__form-control--half {
+                    margin-left: 5%;
+                }
+            }
+            input,
+            textarea {
+                width: 100%;
+                border: none;
+                background: transparent;
+                padding: .5rem;
+            }
+            input {
+                border-bottom: 1px solid #FFF;
+            }
+            textarea {
+                border: 1px solid #FFF;
+            }
+        }
+    }
+}

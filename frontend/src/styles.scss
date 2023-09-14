@@ -1,3 +1,17 @@
+// Custom.scss
+// Option B: Include parts of Bootstrap
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "./../node_modules/bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "./../node_modules/bootstrap/scss/variables";
+@import "./../node_modules/bootstrap/scss/mixins";
+
+// 5. Add additional custom code here
+
 body {
     background: #000;
     font-family: 'Roboto', sans-serif;
@@ -18,6 +32,21 @@ body {
     &__image {
         width: 100%;
         object-fit: cover;
+    }
+    &__blurb {
+        width: 75%;
+    }
+    @include media-breakpoint-up(lg) {
+        &--half {
+            width: 50%;
+        }
+        height: calc(100vh - 96px);
+        &__image {
+            height: 100%;
+        }
+        &__blurb {
+            margin-bottom: 5vh;
+        }
     }
 }
 
