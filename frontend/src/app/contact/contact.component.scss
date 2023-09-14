@@ -19,15 +19,21 @@
             height: 100%;
         }
         &__blurb {
-            margin-bottom: 5vh;
+            margin-bottom: 0;
         }
     }
     &__title {
         font-family: 'Libre Bodoni', serif;
         text-transform: uppercase;
-        font-size: 3rem;
+        font-size: 5rem;
         line-height: 90%;
+        @include media-breakpoint-up(sm) {
+            font-size: 7rem;
+        }
         @include media-breakpoint-up(lg) {
+            font-size: 7rem;
+        }
+        @include media-breakpoint-up(xl) {
             font-size: 9rem;
         }
     }
@@ -38,15 +44,21 @@
         &-control {
             padding-top: .5rem;
             padding-bottom: 1.5rem;
+            &:last-child {
+                padding-bottom: 0;
+            }
             &--full {
                 width: 100%;
             }
             &--half {
-                width: 45%;
-                display: inline-block;
-                & + .contact__form-control--half {
-                    margin-left: 5%;
+                width: 100%;
+                @include media-breakpoint-up(sm) {
+                    width: 47.5%;
+                    & + .contact__form-control--half {
+                        margin-left: 5%;
+                    }
                 }
+                display: inline-block;
             }
             input,
             textarea {
@@ -60,6 +72,16 @@
             }
             textarea {
                 border: 1px solid #FFF;
+            }
+        }
+        &--submit {
+            background: transparent;
+            border: none;
+            font-size: 2rem;
+            color: #FFF;
+            transition: color .5s ease;
+            &.disabled {
+                color: rgba(255, 255, 255, .25);
             }
         }
     }

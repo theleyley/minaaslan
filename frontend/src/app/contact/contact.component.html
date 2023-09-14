@@ -6,7 +6,7 @@
                 <markdown [data]="pageData.blurb"></markdown>
             </div>
             <section class="contact">
-                <form class="contact__form" [formGroup]="contactForm" (ngSubmit)="onSubmit()"  *ngIf="!onSubmission">
+                <form class="contact__form" [formGroup]="contactForm" (ngSubmit)="onSubmit()"  *ngIf="!onSuccess && !onSubmitFail">
                     <div class="contact__form-control contact__form-control--full">
                         <input type="text" formControlName="fullName" placeholder="FULL NAME*">
                     </div>
@@ -22,12 +22,17 @@
                         <textarea type="text" formControlName="message" placeholder="MESSAGE*"></textarea>
                     </div>
 
-                    <button class="button" type="submit" [disabled]="!contactForm.valid">Some Arrow</button>
+                    <div class="contact__form-control d-flex justify-content-end">
+                        <button class="contact__form--submit button" type="submit" [ngClass]="{'disabled': !contactForm.valid}" [disabled]="!contactForm.valid"><i class="bi bi-arrow-right"></i>
+                        </button>
+                    </div>
                 </form>
-
-                <div *ngIf="onSubmission">
-                    <span>Thanks Nigga</span>
-                    <p (click)="route('')" style="cursor: pointer">Click Me to go somewhere</p>
+                <div>
+                    <div class="contact__response" *ngIf="onSuccess || onSubmitFail">
+                        <markdown [data]="pageData.thankYouText" *ngIf="onSuccess"></markdown>
+                        <markdown [data]="pageData?.formSubmitFailText" *ngIf="onSubmitFail"></markdown>
+                    </div>
+                    <!-- <p (click)="route('')" style="cursor: pointer">Click Me to go somewhere</p> -->
                 </div>
             </section>
         </div>

@@ -17,8 +17,9 @@ export class ContactComponent implements OnInit {
   payload = {};
   pageData: any;
   formSubscription: Subscription = new Subscription();
-  onSubmission = false;
   baseUrl: string = '';
+  onSuccess = false;
+  onSubmitFail = false;
 
   contactForm = new FormGroup({
     fullName: new FormControl('', [Validators.required]),
@@ -59,10 +60,10 @@ export class ContactComponent implements OnInit {
     const url = `${this.baseUrl}/api/ezforms/submit`;
     this.http.post<any>(url, {token, formData: this.payload}).pipe(map((response) => {
               // Success
-              this.onSubmission = true;
+              this.onSuccess = true;
             }, (err: any) => {
               // Error
-              this.onSubmission = true;
+              this.onSubmitFail = true;
 
             })
         ).subscribe();

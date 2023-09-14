@@ -33,6 +33,14 @@
     "slug": {
       "type": "uid",
       "targetField": "title"
+    },
+    "thankYouText": {
+      "type": "richtext",
+      "required": true
+    },
+    "formSubmitFailText": {
+      "type": "richtext",
+      "required": true
     }
   }
 }
