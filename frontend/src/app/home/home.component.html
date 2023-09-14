@@ -20,10 +20,10 @@
 </section>
 <section class="testimonials d-md-flex position-relative">
     <div class="testimonials__bg testimonials__bg--dark d-md-flex align-items-md-center">
-        <div class="testimonials__blurb testimonials__blurb--left me-auto"><markdown [data]="pageData.leftBlurb"></markdown></div>
+        <div class="testimonials__blurb testimonials__blurb--left me-auto" *ngIf="pageData?.leftBlurb"><markdown [data]="pageData.leftBlurb"></markdown></div>
     </div>
     <div class="testimonials__bg testimonials__bg--light d-md-flex align-items-md-center">
-        <div class="testimonials__blurb testimonials__blurb--right ms-auto">
+        <div class="testimonials__blurb testimonials__blurb--right ms-auto" *ngIf="pageData?.rightBlurb">
             <markdown [data]="pageData.rightBlurb"></markdown></div>
     </div>
     <div class="d-none d-md-block circle flex-shrink-0 position-absolute top-50 start-50 translate-middle">
