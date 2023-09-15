@@ -4,9 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve -o",
-    "build": "ng build --configuration=production",
+    "build": "yarn install:ng && ng build --configuration=production",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "install:ng": "npm i -g @angular/cli"
   },
   "private": true,
   "dependencies": {
