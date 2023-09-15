@@ -303,7 +303,6 @@ oui-ui/.gitignore at develop · SWEngineering/oui-ui
 
 _static
 .npmrc
-yarn.lock
 .yarnrc
 ./src/.yarnrc
 ./src/.npmrc
