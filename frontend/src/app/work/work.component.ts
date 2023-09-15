@@ -32,6 +32,14 @@ export class WorkComponent implements OnInit {
     return `${this.env.apiBase}${path}`;
   }
 
+  buildImagePath(path: any) {
+    if (this.env.production === true) {
+      return ``;
+    }else {
+      return `${this.env.apiBase}${path}`;
+    }
+  }
+
   isNonImageMediaType(type: string) {
     let isValid = false;
 

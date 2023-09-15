@@ -76,4 +76,12 @@ export class ContactComponent implements OnInit {
   buildPath(path: any) {
     return `${this.env.apiBase}${path}`;
   }
+
+  buildImagePath(path: any) {
+    if (this.env.production === true) {
+      return ``;
+    }else {
+      return `${this.env.apiBase}${path}`;
+    }
+  }
 }

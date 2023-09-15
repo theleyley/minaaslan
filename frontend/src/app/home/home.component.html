@@ -1,5 +1,5 @@
 <section class="hero">
-    <img src="{{ buildPath(pageData?.hero?.data?.attributes?.url) }}" class="img-fluid" [attr.alt]="pageData?.hero?.data?.attributes?.alternativeText" class="img-fluid hero__image" />
+    <img src="{{ buildImagePath(pageData?.hero?.data?.attributes?.url) }}" class="img-fluid" [attr.alt]="pageData?.hero?.data?.attributes?.alternativeText" class="img-fluid hero__image" />
 </section>
 <section class="container py-5 py-md-5 power-words">
     <div class="row power-words__animated">
@@ -15,7 +15,7 @@
     </div>
 </section>
 <section class="work-animation">
-    <img src="{{ buildPath(pageData?.workSectionImage?.data?.attributes?.url) }}" class="img-fluid w-100" [attr.alt]="pageData?.workSectionImage?.data?.attributes?.alternativeText" />
+    <img src="{{ buildImagePath(pageData?.workSectionImage?.data?.attributes?.url) }}" class="img-fluid w-100" [attr.alt]="pageData?.workSectionImage?.data?.attributes?.alternativeText" />
     <app-cards></app-cards>
 </section>
 <section class="testimonials d-md-flex position-relative">

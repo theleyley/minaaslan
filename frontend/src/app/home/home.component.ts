@@ -49,4 +49,12 @@ export class HomeComponent implements OnInit {
     return `${this.env.apiBase}${path}`;
   }
 
+  buildImagePath(path: any) {
+    if (this.env.production === true) {
+      return ``;
+    }else {
+      return `${this.env.apiBase}${path}`;
+    }
+  }
+
 }

@@ -5,7 +5,7 @@
         </div>
     </div>
     <div class="hero--half hero__image-container order-1 order-lg-2">
-        <img src="{{ buildPath(pageData?.bannerImage?.data?.attributes?.url) }}" class="img-fluid" [attr.alt]="pageData?.bannerImage?.data?.attributes?.alternativeText" class="img-fluid hero__image" />
+        <img src="{{ buildImagePath(pageData?.bannerImage?.data?.attributes?.url) }}" class="img-fluid" [attr.alt]="pageData?.bannerImage?.data?.attributes?.alternativeText" class="img-fluid hero__image" />
     </div>
 </section>
 <section class="experience__section">
