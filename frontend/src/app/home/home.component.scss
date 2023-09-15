@@ -12,6 +12,7 @@
 
 // 5. Add additional custom code here
 .hero {
+    height: inherit;
     &__image {
         height: 75vh;
     }
