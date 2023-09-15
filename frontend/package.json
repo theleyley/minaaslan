@@ -4,10 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve -o",
-    "build": "yarn install:ng && ng build --configuration=production",
+    "build": "yarn preinstall && ng build --configuration=production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "install:ng": "npm i -g @angular/cli"
+    "preinstall": "npm i -g @angular/cli@16.2.1"
   },
   "private": true,
   "dependencies": {
