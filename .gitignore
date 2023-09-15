@@ -307,4 +307,3 @@ yarn.lock
 .yarnrc
 ./src/.yarnrc
 ./src/.npmrc
-./src/yarn.lock
