@@ -79,7 +79,7 @@ export class ContactComponent implements OnInit {
 
   buildImagePath(path: any) {
     if (this.env.production === true) {
-      return ``;
+      return `${path}`;
     }else {
       return `${this.env.apiBase}${path}`;
     }
