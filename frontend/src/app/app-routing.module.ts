@@ -18,6 +18,7 @@ const routes: Routes = [
   {
     path: 'work/:id',
     component: WorkComponent,
+    pathMatch: 'full'
   },
   {
     path: 'ethos',
