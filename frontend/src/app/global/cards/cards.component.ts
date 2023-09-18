@@ -17,8 +17,6 @@ export class CardsComponent implements OnInit {
   ngOnInit(): void {
     this.workService.getWork().subscribe((workItems) => {
       if (workItems) {
-        console.log(workItems);
-
         if (this.excludedId) {
           workItems.forEach(item => {
             if (item.id !== this.excludedId) {
@@ -35,7 +33,6 @@ export class CardsComponent implements OnInit {
 
   viewWork(work: WorkModel) {
     const route = work.attributes.slug;
-    console.log(work);
     this.router.navigateByUrl('/', { skipLocationChange: true }).then(() =>
         this.router.navigate([`/work/${route}`]));
   }
